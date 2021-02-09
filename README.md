@@ -8,7 +8,5 @@ git clone https://github.com/deveshmanish/argus.git
 
 cd argus
 
-docker build .
-
 docker-compose up -d
 
