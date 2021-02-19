@@ -1,6 +1,6 @@
 FROM debian:stable-slim
 RUN apt-get update && apt-get -y upgrade \
-&&  apt-get --no-install-recommends -y install apache2 fping make gcc python3-dev libapache2-mod-perl2 libgd-perl wget libcgi-session-perl
+&&  apt-get --no-install-recommends -y install apache2 fping make gcc python3-dev libapache2-mod-perl2 libgd-perl wget libcgi-session-perl python3-pip
 WORKDIR /usr
 RUN cpan Digest::MD5 Digest::SHA1 Digest::HMAC Crypt::DES Socket6
 ENV PERL5LIB=/usr/local/lib/perl5
@@ -22,6 +22,7 @@ RUN apt clean && apt autoremove && \
     rm -r /var/lib/apt/lists /var/cache/apt/archives && \
     mv /var/argus/users.example /var/argus/users && \
     mv /var/argus/config.example  /var/argus/config
+RUN pip3 install requests
 
 COPY --chown=root file/docker-entrypoint.sh /usr/local/sbin/docker-entrypoint.sh
 RUN ["chmod", "777", "/usr/local/sbin/docker-entrypoint.sh"]
