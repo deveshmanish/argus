@@ -4,7 +4,7 @@ Uses buster:slim as base.
 
 STEPS
 
-git clone --branch=debian-pip https://github.com/deveshmanish/argus.git
+git clone --branch=debian-telegram-send https://github.com/deveshmanish/argus.git
 
 cd argus
 
