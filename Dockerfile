@@ -13,7 +13,7 @@ RUN ./Configure
 RUN make
 RUN make install
 RUN a2enmod cgi
-RUN pip3 install requests
+RUN pip3 install telegram-send
 RUN sed -i 's@/var/www/html@/usr/local/htdocs/argus@g' /etc/apache2/sites-enabled/000-default.conf  &&\
     sed -i 's@/usr/lib/cgi-bin@/usr/local/cgi-bin@g' /etc/apache2/conf-enabled/serve-cgi-bin.conf   &&\
     sed -i 's@/var/www@/usr/local/htdocs@g' /etc/apache2/apache2.conf
