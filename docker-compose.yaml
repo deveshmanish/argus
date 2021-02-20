@@ -5,7 +5,7 @@ volumes:
   data-argus: {}
 services:
   argus:
-    image: deveshmanish/argus:debian-pip
+    image: deveshmanish/argus:debian-telegram
     container_name: argus
     tty: true
     ports:
