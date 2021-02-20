@@ -12,7 +12,6 @@ services:
       - "80:80"
     volumes:
       - ./config:/var/argus/config
-      - ./bin:/opt/argus/bin/
       - ./configDir:/opt/argus/configDir
       - ./users:/var/argus/users
       - data-argus:/var/argus/
