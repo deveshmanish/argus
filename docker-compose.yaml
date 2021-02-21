@@ -7,9 +7,11 @@ services:
   argus:
     image: deveshmanish/argus:debian-telegram
     container_name: argus
+    restart: always
     tty: true
     ports:
       - "80:80"
+      - "3074:3074"
     volumes:
       - ./config:/var/argus/config
       - ./configDir:/opt/argus/configDir
