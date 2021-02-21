@@ -7,9 +7,11 @@ services:
   argus:
     image: deveshmanish/argus:debian-pip
     container_name: argus
+    restart: always
     tty: true
     ports:
       - "80:80"
+      - "3074:3074"
     volumes:
       - ./config:/var/argus/config
       - ./bin:/opt/argus/bin/
