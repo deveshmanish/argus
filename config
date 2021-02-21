@@ -30,7 +30,7 @@ nolotsmsgs: yes
 test_port: 3074
 
 Method "tg" {
-  command: telegram-send --config /opt/argus/etc/telegram/%R.conf "%E\n%M"  
+  command: telegram-send --config /opt/argus/configDir/telegram/%R.conf "%E\n%M"  
 }
 
 # enable built in resolver
