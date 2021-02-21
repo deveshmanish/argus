@@ -8,16 +8,40 @@ style_sheet: /argus.css
 javascript: /argus.js
 # send messages to syslog
 syslog: daemon
+#acl definition root,noc,user
+acl_root: root 
+acl_annotate: noc root
+acl_override: noc root
+acl_staff: root
+acl_user: noc root user 
+acl_getconf: noc root
+
+ackonup: yes
+showreason: yes
+showresult: yes
+sort: no
+showstats: yes
+autoack.warning: yes
+
 # who should be notified when things break? don't summarize notifications
 nolotsmsgs: yes
+
 # enable built in tcp test port
 test_port: 3074
+
+Method "tg" {
+  command: telegram-send --config /opt/argus/etc/telegram/%R.conf "%E\n%M"  
+}
+
 # enable built in resolver
 Resolv
-#DARP "argusWIFIER" {
-#        master "argusMaster" {
-#                hostname: 172.27.32.51
-#                secret: nmsgroup
+
+#Darp settings
+#darp_mode: distributed
+#DARP "giveArgusaNamehere" {
+#        master "argusMasterName" {
+#                hostname: 1.1.1.1
+#                secret: password
 #        }
 #}
 Include "/opt/argus/configDir/argusConfig"
