@@ -38,10 +38,25 @@ Resolv
 
 #Darp settings
 #darp_mode: distributed
+
+#Master settings
+#DARP "giveArgusaNamehere" {
+#        slave "argusSlaveName1" {
+#                hostname: 1.1.1.1
+#                secret: password
+#        }
+#        slave "argusSlaveName2" {
+#                hostname: 2.2.2.2
+#                secret: password
+#        }
+#}
+
+#Slave Settings
 #DARP "giveArgusaNamehere" {
 #        master "argusMasterName" {
 #                hostname: 1.1.1.1
 #                secret: password
 #        }
 #}
+
 Include "/opt/argus/configDir/argusConfig"
